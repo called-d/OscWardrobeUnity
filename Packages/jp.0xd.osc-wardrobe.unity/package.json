@@ -1,0 +1,13 @@
+{
+  "name": "jp.0xd.osc-wardrobe.unity",
+  "displayName": "OSC Wardrobe",
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "description": "Radial menu for changing avatar in VRChat using OSC.",
+  "vrchatVersion": "2022.1.1",
+  "author": {
+    "name": "called_D",
+    "email": "called.0xd@gmail.com",
+    "url": "https://twitter.com/called_D"
+  }
+}

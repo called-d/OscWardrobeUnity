@@ -1,5 +1,6 @@
 {
-    "name": "VRChatPackageTemplate.Editor",
+    "name": "OscWardrobeUnity.Editor",
+    "rootNamespace": "",
     "references": [],
     "includePlatforms": [
         "Editor"

@@ -202,8 +202,8 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       }
     },
-    "com.vrchat.demo-template": {
-      "version": "file:com.vrchat.demo-template",
+    "jp.0xd.osc-wardrobe.unity": {
+      "version": "file:jp.0xd.osc-wardrobe.unity",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
