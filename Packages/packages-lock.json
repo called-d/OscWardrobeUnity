@@ -206,7 +206,9 @@
       "version": "file:jp.0xd.osc-wardrobe.unity",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {}
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
+      }
     },
     "nadena.dev.modular-avatar": {
       "version": "file:nadena.dev.modular-avatar",

@@ -9,5 +9,13 @@
     "name": "called_D",
     "email": "called.0xd@gmail.com",
     "url": "https://twitter.com/called_D"
+  },
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "2.0.0"
+  },
+  "vpmDependencies": {
+    "com.vrchat.avatars": ">=3.7.4",
+    "nadena.dev.ndmf": ">=1.7.7 <2.0.0-a",
+    "nadena.dev.modular-avatar": ">=1.12.0 <2.0.0-a"
   }
 }
