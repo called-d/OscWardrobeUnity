@@ -1,14 +1,10 @@
 {
-    "name": "OscWardrobeUnity.Editor",
+    "name": "OscWardrobeUnity",
     "rootNamespace": "",
     "references": [
-        "GUID:8ba46144cf3e1e1478ec5751568d6ed1",
-        "GUID:62ced99b048af7f4d8dfe4bed8373d76",
         "GUID:fc900867c0f47cd49b6e2ae4ef907300"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
