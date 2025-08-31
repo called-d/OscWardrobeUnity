@@ -10,7 +10,11 @@ namespace called_D.OscWardrobe.Unity.Editor
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            EditorGUI.BeginProperty(position, label, property);
+            var buttonWidth = 22;
+            var padding = 1;
+            var inputRect = new Rect(position.x, position.y, position.width - buttonWidth - padding, position.height);
+            var buttonRect = new Rect(position.xMax - buttonWidth, position.y, buttonWidth, position.height);
+            EditorGUI.BeginProperty(inputRect, label, property);
             var aliases = Utils.Aliases;
             if (aliases == null) aliases = new List<Definitions.Alias>();
             var currentAlias = property.stringValue;
@@ -21,13 +25,14 @@ namespace called_D.OscWardrobe.Unity.Editor
                 aliasOptions[i + 1] = aliases[i].Key;
             }
             int currentIndex = System.Array.IndexOf(aliasOptions, currentAlias);
-            var newIndex = EditorGUI.Popup(position, label.text, currentIndex, aliasOptions);
+            var newIndex = EditorGUI.Popup(inputRect, label.text, currentIndex, aliasOptions);
             if (newIndex != currentIndex)
             {
                 property.stringValue = aliasOptions[newIndex];
                 if (newIndex <= 0) property.stringValue = "";
             }
             EditorGUI.EndProperty();
+            if (GUI.Button(buttonRect, "＋")) AliasEditorWindow.ShowWWindow();
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
