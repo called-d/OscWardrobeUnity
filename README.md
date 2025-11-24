@@ -8,7 +8,7 @@ Expression Menu に「アバター変更ボタン」を実装するためのエ�
 ## How To Install
 
 ### called_D の VPM リポジトリを追加
-[![Add To VCC](https://github.com/user-attachments/assets/bfb0d09e-e815-4228-a1af-d23e8ced628b)](vcc://vpm/addRepo?url=https://called-d.github.io/vpm-listing/index.json)
+[![Add To VCC](https://github.com/user-attachments/assets/bfb0d09e-e815-4228-a1af-d23e8ced628b)](https://called-d.github.io/vpm-listing/install.html)
 
 または VCC / ALCOM で以下を追加してください
 
