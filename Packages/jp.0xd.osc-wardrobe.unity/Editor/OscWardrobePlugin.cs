@@ -74,7 +74,8 @@ namespace called_D.OscWardrobe.Unity.Editor
                         Debug.LogWarning("OSC Wardrobe: No valid blueprint ID found on avatar root object.");
                         return;
                     }
-                    var definitions = ctx.Extension<AvatarChangeContext>().definitions;
+                    // write to definitions file (%APPDATA%\jp.0xd.osc-wardrobe.app\defs\avatars\<blueprintId>.json)
+                    var definitions = ctx.Extension<AvatarChangeContext>().BuildDefinitions(ctx);
                     Definitions.WriteAvatarDefinition(blueprintId, JsonConvert.SerializeObject(definitions, Formatting.Indented));
                 });
             });

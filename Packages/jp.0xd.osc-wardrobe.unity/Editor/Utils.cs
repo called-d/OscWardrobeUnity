@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
 using VRC.SDK3.Avatars.Components;
@@ -8,6 +9,17 @@ namespace called_D.OscWardrobe.Unity.Editor
 {
     internal class Utils
     {
+
+        [MenuItem("Tools/Osc Wardrobe/Open Definitions Directory")]
+        static void OpenDefinitionsDirectory()
+        {
+            var path = Definitions.GetDefinitionRootDirectory();
+            if (System.IO.Directory.Exists(path))
+            {
+                System.Diagnostics.Process.Start("explorer", path);
+            }
+        }
+
         public static string GetBlueprintId(GameObject obj)
         {
             if (!obj) return null;

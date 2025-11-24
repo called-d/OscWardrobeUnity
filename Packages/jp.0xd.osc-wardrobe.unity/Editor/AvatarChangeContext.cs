@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using VRC.SDK3.Avatars.ScriptableObjects;
 using nadena.dev.ndmf;
 
 namespace called_D.OscWardrobe.Unity.Editor
@@ -38,6 +39,29 @@ namespace called_D.OscWardrobe.Unity.Editor
         {
             if (!definitions.ContainsKey(condition1)) definitions[condition1] = new /* KeyValueToAlias */ Dictionary<string, string>();
             definitions[condition1][condition2] = alias;
+        }
+
+        public /* definitions */ Dictionary<string, Dictionary<string, string>> BuildDefinitions(BuildContext ctx)
+        {
+            var expressionsMenu = ctx.AvatarDescriptor.expressionsMenu;
+            if (expressionsMenu == null) return definitions;
+
+            var visited = new HashSet<VRCExpressionsMenu>();
+            void WalkMenu(VRCExpressionsMenu menu, int depth)
+            {
+                if (menu == null || visited.Contains(menu)) return;
+                visited.Add(menu);
+
+                foreach (var control in menu.controls)
+                {
+                    if (control.subMenu == null) continue;
+                    WalkMenu(control.subMenu, depth + 1);
+                }
+            }
+
+            WalkMenu(expressionsMenu, 0);
+
+            return definitions;
         }
     }
 }

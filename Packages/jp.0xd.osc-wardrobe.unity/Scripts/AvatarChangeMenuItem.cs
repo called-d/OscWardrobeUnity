@@ -15,7 +15,8 @@ namespace called_D.OscWardrobe.Unity
         public bool TryConvertToModularAvatarMenuItem(out ModularAvatarMenuItem menuItem)
         {
             menuItem = null;
-            if (string.IsNullOrEmpty(MenuName) || string.IsNullOrEmpty(Parameter) || string.IsNullOrEmpty(Value) || string.IsNullOrEmpty(Alias)) return false;
+            var MenuName_ = string.IsNullOrEmpty(MenuName) ? Alias : MenuName;
+            if (string.IsNullOrEmpty(MenuName_) || string.IsNullOrEmpty(Parameter) || string.IsNullOrEmpty(Value) || string.IsNullOrEmpty(Alias)) return false;
             if (!float.TryParse(Value, out var v)) return false;
 
             var existingItem = gameObject.GetComponent<ModularAvatarMenuItem>();
@@ -24,7 +25,7 @@ namespace called_D.OscWardrobe.Unity
             menuItem.Control.type = VRC.SDK3.Avatars.ScriptableObjects.VRCExpressionsMenu.Control.ControlType.Button;
             menuItem.isSynced = false;
             menuItem.isSaved = false;
-            menuItem.label = MenuName;
+            menuItem.label = MenuName_;
             menuItem.Control.parameter = new VRC.SDK3.Avatars.ScriptableObjects.VRCExpressionsMenu.Control.Parameter
             {
                 name = Parameter,
