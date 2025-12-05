@@ -59,7 +59,19 @@ namespace called_D.OscWardrobe.Unity.Editor
             }
 
             aliasKey = EditorGUILayout.TextField("Alias Key", aliasKey);
+            GUILayout.BeginHorizontal();
             blueprintId = EditorGUILayout.TextField("Blueprint ID", blueprintId);
+            using (new EditorGUI.DisabledScope(blueprintId == "")) {
+                if (GUILayout.Button("❏", GUILayout.Width(22)))
+                {
+                    EditorGUIUtility.systemCopyBuffer = blueprintId;
+                }
+                if (GUILayout.Button("↗", GUILayout.Width(22)))
+                {
+                    Application.OpenURL($"https://vrchat.com/home/avatar/{blueprintId}");
+                }
+            }
+            GUILayout.EndHorizontal();
 
             var changed = _editingIndex < 0
                 ? !(aliasKey == "" && blueprintId == "")
@@ -134,6 +146,10 @@ namespace called_D.OscWardrobe.Unity.Editor
                 if (GUILayout.Button("❏", GUILayout.Width(22)))
                 {
                     EditorGUIUtility.systemCopyBuffer = paramFile.id;
+                }
+                if (GUILayout.Button("↗", GUILayout.Width(22)))
+                {
+                    Application.OpenURL($"https://vrchat.com/home/avatar/{paramFile.id}");
                 }
                 GUILayout.EndHorizontal();
             }
